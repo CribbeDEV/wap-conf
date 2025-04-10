@@ -1,0 +1,8 @@
+{
+    "Templates": {
+        "main": "templates/main_template.txt",
+        "site": "templates/site_template.txt",
+        "reset": "templates/ap_reset.txt"
+    },
+    "OutputDirectory": "./output"
+}

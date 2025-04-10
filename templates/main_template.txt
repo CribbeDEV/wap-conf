@@ -1,0 +1,8 @@
+ap name <original-name> shutdown
+ap name <original-name> location <location>
+ap name <original-name> country <country-code>
+ap name <original-name> controller primary <wlc-main>
+ap name <original-name> controller secondary <wlc-secondary>
+ap name <original-name> no shutdown
+ap name <original-name> name <new-name>
+ap name <new-name> reset
