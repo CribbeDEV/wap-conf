@@ -1,6 +1,0 @@
-ap name ﻿wap-11-bak-gth-th reset
-!
-ap name wap-15-bak-gth-th reset
-!
-ap name wap-12-bak-gth-th reset
-!
