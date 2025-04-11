@@ -1,16 +1,6 @@
-ap name wap-03-bak-gth-th reset
+ap name ﻿wap-11-bak-gth-th reset
 !
-ap name wap-10-bak-gth-th reset
+ap name wap-15-bak-gth-th reset
 !
-ap name wap-06-bak-gth-th reset
-!
-ap name wap-07-bak-gth-th reset
-!
-ap name wap-08-bak-gth-th reset
-!
-ap name wap-09-bak-gth-th reset
-!
-ap name wap-04-bak-gth-th reset
-!
-ap name wap-05-bak-gth-th reset
+ap name wap-12-bak-gth-th reset
 !

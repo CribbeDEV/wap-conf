@@ -18,6 +18,22 @@ type Configuration struct {
 	UserConfiguration
 }
 
+func (w WlcConf) GetMainWLC() string {
+	name, ok := WLC_HOSTS[w.Main]
+	if !ok {
+		panic("Main WLC ip not known")
+	}
+	return name + " " + w.Main
+}
+
+func (w WlcConf) GetSecondaryWLC() (string, bool) {
+	name, ok := WLC_HOSTS[w.Secondary]
+	if !ok {
+		return "", false
+	}
+	return name + " " + w.Secondary, true
+}
+
 var WLC_HOSTS = map[string]string{
 	"10.0.2.38":   "EMEAWLC01",
 	"10.182.2.26": "APACWLC01",

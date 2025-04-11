@@ -36,19 +36,11 @@ func GetUserInput() (string, types.UserConfiguration) {
 	fmt.Print("\rPrimary WLC IP: ")
 	scanner.Scan()
 	primary := scanner.Text()
-	var _, ok = types.WLC_HOSTS[primary]
-	if !ok {
-		panic("No WLC known with this IP: " + primary)
-	}
 
 	// Secondary WLC
 	fmt.Print("\rSecondary WLC IP: ")
 	scanner.Scan()
 	secondary := scanner.Text()
-	_, ok = types.WLC_HOSTS[secondary]
-	if !ok {
-		panic("No WLC known with this IP: " + secondary)
-	}
 
 	fmt.Print("If a output folder already exists, it will be deleted with all its contents. Confirm? (y/N): ")
 	scanner.Scan()

@@ -1,72 +1,27 @@
-ap name APC4D6.6692.B9A0 shutdown
-ap name APC4D6.6692.B9A0 location Bangkok
-ap name APC4D6.6692.B9A0 country TH
-ap name APC4D6.6692.B9A0 controller primary APACWLC01 10.182.2.26
-ap name APC4D6.6692.B9A0 controller secondary WLC-CL 10.0.2.200
-ap name APC4D6.6692.B9A0 no shutdown
-ap name APC4D6.6692.B9A0 name wap-03-bak-gth-th
-ap name wap-03-bak-gth-th reset
+ap name APC4D6.6693.4B70 shutdown
+ap name APC4D6.6693.4B70 location Bangkok
+ap name APC4D6.6693.4B70 country TH
+ap name APC4D6.6693.4B70 controller primary APACWLC01 10.182.2.26
+ap name APC4D6.6693.4B70 controller secondary WLC-CL 10.0.2.200
+ap name APC4D6.6693.4B70 no shutdown
+ap name APC4D6.6693.4B70 name ﻿wap-11-bak-gth-th
+ap name ﻿wap-11-bak-gth-th reset
 !
-ap name APC4D6.6692.B420 shutdown
-ap name APC4D6.6692.B420 location Bangkok
-ap name APC4D6.6692.B420 country TH
-ap name APC4D6.6692.B420 controller primary APACWLC01 10.182.2.26
-ap name APC4D6.6692.B420 controller secondary WLC-CL 10.0.2.200
-ap name APC4D6.6692.B420 no shutdown
-ap name APC4D6.6692.B420 name wap-10-bak-gth-th
-ap name wap-10-bak-gth-th reset
+ap name APC414.A233.BC40 shutdown
+ap name APC414.A233.BC40 location Bangkok
+ap name APC414.A233.BC40 country TH
+ap name APC414.A233.BC40 controller primary APACWLC01 10.182.2.26
+ap name APC414.A233.BC40 controller secondary WLC-CL 10.0.2.200
+ap name APC414.A233.BC40 no shutdown
+ap name APC414.A233.BC40 name wap-15-bak-gth-th
+ap name wap-15-bak-gth-th reset
 !
-ap name APC4D6.6692.BB70 shutdown
-ap name APC4D6.6692.BB70 location Bangkok
-ap name APC4D6.6692.BB70 country TH
-ap name APC4D6.6692.BB70 controller primary APACWLC01 10.182.2.26
-ap name APC4D6.6692.BB70 controller secondary WLC-CL 10.0.2.200
-ap name APC4D6.6692.BB70 no shutdown
-ap name APC4D6.6692.BB70 name wap-06-bak-gth-th
-ap name wap-06-bak-gth-th reset
-!
-ap name APC4D6.6692.C070 shutdown
-ap name APC4D6.6692.C070 location Bangkok
-ap name APC4D6.6692.C070 country TH
-ap name APC4D6.6692.C070 controller primary APACWLC01 10.182.2.26
-ap name APC4D6.6692.C070 controller secondary WLC-CL 10.0.2.200
-ap name APC4D6.6692.C070 no shutdown
-ap name APC4D6.6692.C070 name wap-07-bak-gth-th
-ap name wap-07-bak-gth-th reset
-!
-ap name APC4D6.6692.C150 shutdown
-ap name APC4D6.6692.C150 location Bangkok
-ap name APC4D6.6692.C150 country TH
-ap name APC4D6.6692.C150 controller primary APACWLC01 10.182.2.26
-ap name APC4D6.6692.C150 controller secondary WLC-CL 10.0.2.200
-ap name APC4D6.6692.C150 no shutdown
-ap name APC4D6.6692.C150 name wap-08-bak-gth-th
-ap name wap-08-bak-gth-th reset
-!
-ap name APC4D6.6693.C340 shutdown
-ap name APC4D6.6693.C340 location Bangkok
-ap name APC4D6.6693.C340 country TH
-ap name APC4D6.6693.C340 controller primary APACWLC01 10.182.2.26
-ap name APC4D6.6693.C340 controller secondary WLC-CL 10.0.2.200
-ap name APC4D6.6693.C340 no shutdown
-ap name APC4D6.6693.C340 name wap-09-bak-gth-th
-ap name wap-09-bak-gth-th reset
-!
-ap name APC4D6.6692.B9C0 shutdown
-ap name APC4D6.6692.B9C0 location Bangkok
-ap name APC4D6.6692.B9C0 country TH
-ap name APC4D6.6692.B9C0 controller primary APACWLC01 10.182.2.26
-ap name APC4D6.6692.B9C0 controller secondary WLC-CL 10.0.2.200
-ap name APC4D6.6692.B9C0 no shutdown
-ap name APC4D6.6692.B9C0 name wap-04-bak-gth-th
-ap name wap-04-bak-gth-th reset
-!
-ap name APC4D6.6692.BA00 shutdown
-ap name APC4D6.6692.BA00 location Bangkok
-ap name APC4D6.6692.BA00 country TH
-ap name APC4D6.6692.BA00 controller primary APACWLC01 10.182.2.26
-ap name APC4D6.6692.BA00 controller secondary WLC-CL 10.0.2.200
-ap name APC4D6.6692.BA00 no shutdown
-ap name APC4D6.6692.BA00 name wap-05-bak-gth-th
-ap name wap-05-bak-gth-th reset
+ap name APC414.A233.B8D0 shutdown
+ap name APC414.A233.B8D0 location Bangkok
+ap name APC414.A233.B8D0 country TH
+ap name APC414.A233.B8D0 controller primary APACWLC01 10.182.2.26
+ap name APC414.A233.B8D0 controller secondary WLC-CL 10.0.2.200
+ap name APC414.A233.B8D0 no shutdown
+ap name APC414.A233.B8D0 name wap-12-bak-gth-th
+ap name wap-12-bak-gth-th reset
 !
