@@ -31,7 +31,9 @@ func ReplaceLine(line string, config types.Configuration) string {
 	if ok {
 		new_line = strings.Replace(new_line, "<wlc-secondary>", sec, -1)
 	} else {
-		return "\b"
+		if strings.Contains(line, "<wlc-secondary>") {
+			return "\b"
+		}
 	}
 	new_line = strings.Replace(new_line, "<site>", config.Site, -1)
 	new_line = strings.Replace(new_line, "<mac>", config.OriginalName[2:], -1)
