@@ -9,6 +9,7 @@ import (
 	"os"
 	"path/filepath"
 	"sync"
+	"time"
 )
 
 var user_cfg types.UserVariables
@@ -24,34 +25,27 @@ func main() {
     `)
 
 	cfile, err := os.Open("conf.json")
-	if err != nil {
-		fmt.Println("Error opening conf.json:", err)
-		return
+	if err == nil {
+		decoder := json.NewDecoder(cfile)
+		err = decoder.Decode(&user_cfg)
+		if err != nil {
+			fmt.Println("Error decoding conf.json:", err)
+			return
+		}
+	} else {
+		user_cfg = types.UserVariables{
+			types.TemplateLocations{
+				Main:  "templates/main_template.txt",
+				Site:  "templates/site_template.txt",
+				Reset: "templates/ap_reset.txt",
+			},
+			"./output",
+		}
 	}
 	defer cfile.Close()
 
-	decoder := json.NewDecoder(cfile)
-	err = decoder.Decode(&user_cfg)
-	if err != nil {
-		fmt.Println("Error decoding conf.json:", err)
-		return
-	}
-
 	if user_cfg.Templates.Main == "" || user_cfg.Templates.Site == "" || user_cfg.Templates.Reset == "" {
 		fmt.Println("Error: Template paths are empty in conf.json")
-		return
-	}
-
-	if _, err := os.Stat(user_cfg.Templates.Main); os.IsNotExist(err) {
-		fmt.Printf("Error: Template file not found: %s\n", user_cfg.Templates.Main)
-		return
-	}
-	if _, err := os.Stat(user_cfg.Templates.Site); os.IsNotExist(err) {
-		fmt.Printf("Error: Template file not found: %s\n", user_cfg.Templates.Site)
-		return
-	}
-	if _, err := os.Stat(user_cfg.Templates.Reset); os.IsNotExist(err) {
-		fmt.Printf("Error: Template file not found: %s\n", user_cfg.Templates.Reset)
 		return
 	}
 
@@ -110,10 +104,10 @@ func main() {
 			}
 
 			mu.Lock()
-			datas[0] += file_handling.FillTemplate(user_cfg.Templates.Main, new_conf)
+			datas[0] += file_handling.FillTemplate(user_cfg.Templates.GetMain(), new_conf)
 			if config.Site != "" {
-				datas[1] += file_handling.FillTemplate(user_cfg.Templates.Site, new_conf)
-				datas[2] += file_handling.FillTemplate(user_cfg.Templates.Reset, new_conf)
+				datas[1] += file_handling.FillTemplate(user_cfg.Templates.GetSite(), new_conf)
+				datas[2] += file_handling.FillTemplate(user_cfg.Templates.GetReset(), new_conf)
 			}
 			mu.Unlock()
 		}(row)
@@ -140,4 +134,5 @@ func main() {
 	}
 
 	fmt.Println("Processing completed successfully!")
+	time.Sleep(5 * time.Second)
 }

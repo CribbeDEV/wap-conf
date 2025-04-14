@@ -3,6 +3,8 @@ package file_handling
 import (
 	"bufio"
 	"go_wap/types"
+	"io/ioutil"
+	"net/http"
 	"os"
 	"strings"
 )
@@ -38,18 +40,39 @@ func ReplaceLine(line string, config types.Configuration) string {
 
 func FillTemplate(temp string, config types.Configuration) string {
 	var filled string
+	var scanner *bufio.Scanner
 
-	template, err := os.Open(temp)
-	if err != nil {
-		panic(err)
+	if strings.Contains(temp, "http") {
+		resp, err := http.Get(temp)
+		if err != nil {
+			panic(err)
+		}
+		defer resp.Body.Close()
+
+		body, err := ioutil.ReadAll(resp.Body)
+		if err != nil {
+			panic(err)
+		}
+
+		scanner = bufio.NewScanner(strings.NewReader(string(body)))
+	} else {
+		template, err := os.Open(temp)
+		if err != nil {
+			panic(err)
+		}
+		defer template.Close()
+
+		scanner = bufio.NewScanner(template)
 	}
-	defer template.Close()
 
-	scanner := bufio.NewScanner(template)
 	for scanner.Scan() {
 		line := scanner.Text()
 		new_line := ReplaceLine(line, config)
 		filled += new_line + "\n"
+	}
+
+	if err := scanner.Err(); err != nil {
+		panic(err)
 	}
 
 	return filled + "!\n"

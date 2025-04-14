@@ -1,5 +1,7 @@
 package types
 
+import "os"
+
 type WlcConf struct {
 	Main      string
 	Secondary string
@@ -44,6 +46,31 @@ type TemplateLocations struct {
 	Main  string `json:"main"`
 	Site  string `json:"site"`
 	Reset string `json:"reset"`
+}
+
+func (t TemplateLocations) GetMain() string {
+	if _, err := os.Stat(t.Main); os.IsNotExist(err) {
+		// Return link to RAW
+		return "https://raw.githubusercontent.com/CribbeDEV/wap-conf/refs/heads/main/templates/main_template.txt"
+	} else {
+		return t.Main
+	}
+}
+func (t TemplateLocations) GetSite() string {
+	if _, err := os.Stat(t.Site); os.IsNotExist(err) {
+		// Return link to RAW
+		return "https://raw.githubusercontent.com/CribbeDEV/wap-conf/refs/heads/main/templates/site_template.txt"
+	} else {
+		return t.Site
+	}
+}
+func (t TemplateLocations) GetReset() string {
+	if _, err := os.Stat(t.Reset); os.IsNotExist(err) {
+		// Return link to RAW
+		return "https://raw.githubusercontent.com/CribbeDEV/wap-conf/refs/heads/main/templates/ap_reset.txt"
+	} else {
+		return t.Reset
+	}
 }
 
 type UserVariables struct {
