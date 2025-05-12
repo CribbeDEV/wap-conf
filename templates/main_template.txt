@@ -1,3 +1,4 @@
+ap name <new-name> name <new-name>-old
 ap name <original-name> shutdown
 ap name <original-name> location <location>
 ap name <original-name> country <country-code>
